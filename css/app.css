@@ -1,0 +1,26 @@
+/* * {
+    box-sizing: border box
+} */
+
+
+/* width: fit-content;
+height: fit-content; */
+
+body {
+    color: black;
+    background-color: cadetblue;
+}
+
+body table {
+    margin: 30px auto;
+    color: cornsilk;
+    font-size: 50px;
+    text-align: center;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+    margin: 40px;
+    background-color: coral;
+}

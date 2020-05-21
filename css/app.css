@@ -11,16 +11,39 @@ body {
     background-color: cadetblue;
 }
 
+.levels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+}
+
+.beginner.medium.expert {
+    display: inline-block;
+    margin: 50px;
+}
+
+.timer {
+    height: fit-content;
+    width: fit-content;
+    font-size: 30px;
+    margin: 50px auto;
+    text-align: center;
+    color: cornsilk;
+}
+
 body table {
     margin: 30px auto;
     color: cornsilk;
-    font-size: 50px;
+    font-size: 20px;
     text-align: center;
 }
 
 .cell {
-    height: 100px;
-    width: 100px;
+    height: 30px;
+    width: 30px;
     margin: 40px;
     background-color: coral;
+    /* box-shadow: 14px -18px 26px -3px rgba(0, 0, 0, 0.62); */
 }

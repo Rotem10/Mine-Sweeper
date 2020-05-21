@@ -9,14 +9,21 @@
 </head>
 
 <body onload="initGame()">
+    <div class="timer">000</div>
+    <div class="levels">
+        <button class="beginner" onclick="setLevel(this)">Beginner</button>
+        <button class="medium" onclick="setLevel(this)">Medium</button>
+        <button class="expert" onclick="setLevel(this)">Expert</button>
+        <!-- <button class="restart" onclick="initGame()">Restart</button> -->
+    </div>
 
     <table>
         <tbody class="board"></tbody>
     </table>
 
-    <script src="js/game.js"></script>
     <script src="js/utils.js"></script>
-    <script src="js/mineSweeper.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/functionality.js"></script>
 </body>
 
 </html>

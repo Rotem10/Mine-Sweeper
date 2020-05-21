@@ -1,25 +1,46 @@
 'use strict';
 
-const MINE = '*';
+const MINE = '*'
+const FLAG = '#'
 
-var gGame = {
-    isOn: false,
-    shownCount: 0,
-    markedCount: 0,
-    secsPassed: 0
-};
+var gGame;
 
 var gBoard;
 
-var gLevel = {
-    size: 4,
-    mines: 2
-};
+var gLevel;
+
+var gIntervalId;
 
 function initGame() {
     // This is called when page loads
+    gGame = {
+        isOn: false,
+        shownCount: 0,
+        markedCount: 0,
+        secsPassed: 0,
+        isFirstClick: true
+    };
+    setLevel();
+};
+
+function setLevel(elButton) {
+    if (!gLevel || elButton.className === 'beginner') {
+        gLevel = {
+            size: 4,
+            mines: 2
+        };
+    } else if (elButton.className === 'medium') {
+        gLevel = {
+            size: 8,
+            mines: 12
+        };
+    } else if (elButton.className === 'expert') {
+        gLevel = {
+            size: 12,
+            mines: 30
+        };
+    };
     gBoard = buildBoard();
-    console.table(gBoard);
     renderBoard(gBoard);
 };
 
@@ -46,7 +67,6 @@ function buildBoard() {
 
 function placeMines(board) {
     var minesPos = createMinesPos();
-    console.log(minesPos);
     for (var i = 0; i < minesPos.length; i++) {
         var currPos = minesPos[i];
         board[currPos.i][currPos.j].isMine = true;
@@ -96,7 +116,8 @@ function renderBoard(board) {
         strHTML += `<tr>\n`;
         for (var j = 0; j < board[0].length; j++) {
             var tdId = [i, j];
-            strHTML += `\t<td onclick="cellClicked(this,${i},${j})" class="cell" id="${tdId}" >\n \t</td>\n`;
+            strHTML += `\t<td onclick="cellClicked(this,${i},${j})" onmousedown="cellMarked(this,event,${i},${j})" oncontextmenu="return false;"
+            class="cell" id="${tdId}" >\n \t</td>\n`;
         };
         strHTML += `</tr>\n`;
     };

@@ -16,7 +16,7 @@ function cellClicked(elCell, i, j) {
     } else if (cell.isMine) presented = MINE;
 
     elCell.innerText = `${presented}`;
-    // expandShown(gBoard, elCell, i, j) //not finish
+    expandShown(gBoard, elCell, i, j);
 };
 
 function cellMarked(elCell, ev, i, j) {
@@ -48,23 +48,27 @@ function expandShown(board, elCell, i, j) {
     // When user clicks a cell with no mines around, we need to open not only that cell, but also its neighbors.
     // NOTE: start with a basic implementation that only opens the non-mine 1st degree neighbors
     // BONUS: if you have the time later, try to work more like the real algorithm (see description at the Bonuses section below)
+
     var cell = board[i][j];
-    if (cell.minesAroundCount === 0 && !cell.isMine) {
-        cell.isShown = true;
-        console.log(cell);
-        for (var rowIdx = i - 1; rowIdx <= i + 1; rowIdx++) {
-            if (rowIdx < 0 || rowIdx > board.length - 1) continue;
-            for (var colIdx = j - 1; colIdx <= j + 1; colIdx++) {
-                if (colIdx < 0 || colIdx > board[0].length - 1) continue;
-                if (rowIdx === i && colIdx === j) continue;
-                board[rowIdx][colIdx].isShown = true;
-                document.getElementById(`${rowIdx, colIdx}`)
-                console.log(document.getElementById(`${rowIdx, colIdx}`));
-                // elCell.style = 'background-color: rgb(85, 193, 255);';
-                if (elCell.innerText) elCell.innerText = board[rowIdx][colIdx].minesAroundCount
-            };
-        };
-    };
+    if (cell.minesAroundCount === 0 && !cell.isMine) elCell.style = 'background-color: rgb(85, 193, 255);';
+
+    //not finish
+    // if (cell.minesAroundCount === 0 && !cell.isMine) {
+    //     cell.isShown = true;
+    //     console.log(cell);
+    //     for (var rowIdx = i - 1; rowIdx <= i + 1; rowIdx++) {
+    //         if (rowIdx < 0 || rowIdx > board.length - 1) continue;
+    //         for (var colIdx = j - 1; colIdx <= j + 1; colIdx++) {
+    //             if (colIdx < 0 || colIdx > board[0].length - 1) continue;
+    //             if (rowIdx === i && colIdx === j) continue;
+    //             board[rowIdx][colIdx].isShown = true;
+    //             document.getElementById(`${rowIdx, colIdx}`)
+    //             console.log(document.getElementById(`${rowIdx, colIdx}`));
+    //             elCell.style = 'background-color: rgb(85, 193, 255);';
+    //             if (elCell.innerText) elCell.innerText = board[rowIdx][colIdx].minesAroundCount
+    //         };
+    //     };
+    // };
 };
 
 function startTimer() {

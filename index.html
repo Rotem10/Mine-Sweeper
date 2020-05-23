@@ -9,17 +9,22 @@
 </head>
 
 <body onload="initGame()">
-    <div class="timer">000</div>
+
+    <button class="restart" onclick="initGame()">😃</button>
+
+    <div class="livesCounter"></div>
+    <table>
+
+        <div class="timer">000 </div>
+
+        <tbody class="board"></tbody>
+    </table>
+
     <div class="levels">
         <button class="beginner" onclick="setLevel(this)">Beginner</button>
         <button class="medium" onclick="setLevel(this)">Medium</button>
         <button class="expert" onclick="setLevel(this)">Expert</button>
-        <!-- <button class="restart" onclick="initGame()">Restart</button> -->
     </div>
-
-    <table>
-        <tbody class="board"></tbody>
-    </table>
 
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>

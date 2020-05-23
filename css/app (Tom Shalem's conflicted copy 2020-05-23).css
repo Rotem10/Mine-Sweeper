@@ -16,34 +16,34 @@ body {
 .beginner {
     display: inline-block;
     cursor: pointer;
-    margin: 20px 3px;
+    margin: 10px 2px;
     background-color: #e81224;
+    border-radius: 10%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     font-size: 20px;
     color: #ffffff;
-    font-family: monospace;
 }
 
 .medium {
     display: inline-block;
     cursor: pointer;
-    margin: 20px 3px;
-    background-color: hsl(355, 86%, 49%);
+    margin: 10px 2px;
+    background-color: #e81224;
+    border-radius: 10%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     font-size: 20px;
     color: #ffffff;
-    font-family: monospace;
 }
 
 .expert {
     display: inline-block;
     cursor: pointer;
-    margin: 20px 3px;
+    margin: 10px 2px;
     background-color: #e81224;
+    border-radius: 10%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     font-size: 20px;
     color: #ffffff;
-    font-family: monospace;
 }
 
 .livesCounter {
@@ -52,8 +52,7 @@ body {
     justify-content: center;
     text-align: center;
     margin: 20px auto;
-    font-size: 25px;
-    font-family: monospace;
+    font-size: 20px;
 }
 
 .restart {
@@ -64,9 +63,8 @@ body {
     width: fit-content;
     justify-content: center;
     text-align: center;
-    margin: 40px auto;
-    margin-bottom: 0px;
-    font-size: 30px;
+    margin: 20px auto;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -74,10 +72,10 @@ body {
     height: fit-content;
     width: fit-content;
     font-size: 30px;
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: center;
     color: #e81224;
-    font-family: monospace;
+    /* transition: 0.5s; */
 }
 
 body table {
@@ -85,7 +83,6 @@ body table {
     color: #e81224;
     font-size: 20px;
     text-align: center;
-    font-family: monospace;
 }
 
 .cell {

@@ -48,6 +48,8 @@ function checkGameOver(i, j) {
             if (gGame.livesCounter === 1) document.querySelector('.livesCounter').innerText = `${LIVE}`
             if (gLevel.mines === 0 || gGame.livesCounter === 0) {
                 document.querySelector('.livesCounter').innerText = `Game Over`
+                gGame.isOn = false
+                clearInterval(gIntervalId)
                 for (var rowIdx = 0; rowIdx < gBoard.length; rowIdx++) {
                     for (var colIdx = 0; colIdx < gBoard[0].length; colIdx++) {
                         if (gBoard[rowIdx][colIdx].isMine && !gBoard[rowIdx][colIdx].isShown) {
@@ -56,8 +58,7 @@ function checkGameOver(i, j) {
                         }
                     }
                 }
-                gGame.isOn = false
-                clearInterval(gIntervalId)
+
             }
         }
     } else {
